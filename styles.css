@@ -1,0 +1,127 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #f53b3b, #ffffff);
+}
+
+.container {
+    text-align: center;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 13%;
+    position: relative;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+button {
+    text-align: center;
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px 0;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    background-color: #000000;
+    color: #ffffff;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+    background-color: #333333;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Hidden Sections */
+.hidden {
+    display: none;
+}
+
+/* Options and Instructions */
+#options, #instructions {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Game Screen */
+#gameBoard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#gameStatus {
+    margin-bottom: 20px;
+}
+
+#turnIndicator {
+    font-size: 1.5em;
+    color: #333;
+}
+
+#gameArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#deck, #discardPile, #playerHand, #opponentHand {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 100px;
+    height: 140px;
+    margin: 5px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+    line-height: 140px;
+    font-size: 1.2em;
+}
+
+#gameControls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}

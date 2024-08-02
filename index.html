@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUNO</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Menu -->
+        <div class="main-menu">
+            <h1>SUNO</h1>
+            <button onclick="startGame()">Start Game</button>
+            <button onclick="showInstructions()">Instructions</button>
+            <button onclick="exitGame()">Exit</button>
+        </div>
+
+        <!-- Instructions Screen -->
+        <div id="instructions" class="hidden">
+            <div class="scrollable-box">
+                <div class="slide">
+                    <h2>Instructions</h2>
+                    <p><strong>Objective:</strong> The goal is to be the first player to score 500 points. Points are scored by being the first to play all of the cards in your hand. The points come from the cards left in your opponents' hands.</p>
+                </div>
+                <div class="slide">
+                    <h2>Setup</h2>
+                    <p>Each player draws a card; the player with the highest card value deals (count any card with a symbol as zero). The dealer shuffles and deals each player 7 cards. The remaining deck is placed facedown to form a draw pile. The top card of the draw pile is turned over to begin the discard pile.</p>
+                </div>
+                <div class="slide">
+                    <h2>Gameplay</h2>
+                    <p>Players take turns in clockwise order around the table. On a player’s turn, they must match a card from their hand to the card on the top of the discard pile, either by number, color, or symbol (Action cards). If the player has no playable cards, they must draw a card from the draw pile. If that card can be played, they may do so immediately. Otherwise, play passes to the next player.</p>
+                </div>
+                <div class="slide">
+                    <h2>Special Cards</h2>
+                    <ul>
+                        <li><strong>Skip:</strong> The next player is skipped.</li>
+                        <li><strong>Reverse:</strong> Reverses the direction of play.</li>
+                        <li><strong>Draw Two:</strong> The next player draws 2 cards and misses their turn.</li>
+                        <li><strong>Wild:</strong> The player declares the next color to be matched.</li>
+                        <li><strong>Wild Draw Four:</strong> The player declares the next color to be matched; the next player draws 4 cards and loses their turn. (This card can only be played if the player has no other cards that can be played.)</li>
+                    </ul>
+                </div>
+                <div class="slide">
+                    <h2>Winning a Round</h2>
+                    <p>The first player to get rid of all of their cards wins the round and scores points. Points are awarded for the cards left in the opponents' hands: Number cards are worth their face value, Draw Two/Reverse/Skip cards are worth 20 points each, and Wild/Wild Draw Four cards are worth 50 points each.</p>
+                </div>
+                <div class="slide">
+                    <h2>Winning the Game</h2>
+                    <p>The first player to reach 500 points wins the game.</p>
+                    <h2>Additional Rules</h2>
+                    <ul>
+                        <li><strong>Calling UNO:</strong> When you have only one card left, you must shout "UNO!" If another player catches you not saying "UNO" before your next turn, you must draw two cards.</li>
+                        <li><strong>Penalties:</strong> If a player plays a Wild Draw Four card illegally, they must draw four cards.</li>
+                    </ul>
+                    <button onclick="backToMenu()">Back to Menu</button>
+                </div>
+            </div>
+        </div>
+
+<!-- Game Screen -->
+<div id="game" class="hidden">
+    <div id="gameBoard">
+        <div id="discardPile" class="pile"></div>
+        <div id="player1" class="player">
+            <h3>Player 1</h3>
+            <div id="player1Hand" class="hand"></div>
+        </div>
+        <div id="player2" class="player">
+            <h3>Player 2</h3>
+            <div id="player2Hand" class="hand"></div>
+        </div>
+        <div id="turnIndicator"></div> <!-- Add this element -->
+        <button id="drawCard">Draw Card</button>
+        <button id="endTurn">End Turn</button>
+        <button onclick="backToMenu()">Back to Menu</button>
+    </div>
+</div>
+
+        <!-- Victory Screen -->
+        <div id="victory" class="hidden">
+            <h2>Victory!</h2>
+            <p>Congratulations, Player <span id="winner">1</span>, you have won the game!</p>
+            <button onclick="backToMenu()">Back to Menu</button>
+        </div>
+
+        <!-- Loss Screen -->
+        <div id="loss" class="hidden">
+            <h2>Game Over</h2>
+            <p>Player <span id="loser">1</span> has lost the game. Better luck next time!</p>
+            <button onclick="backToMenu()">Back to Menu</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
